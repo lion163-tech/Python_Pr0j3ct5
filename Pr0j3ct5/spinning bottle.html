@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @keyframes svg--animation {
+      0% {
+        transform: rotateZ(0deg);
+      }
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+
+    svg {
+      max-width: 100px;
+      animation: 2s linear infinite svg--animation;
+    }
+
+    circle {
+      fill: transparent;
+      stroke: #2f3d4c;
+      stroke-width: 10;
+    }
+  </style>
+</head>
+<body>
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="45"/>
+  </svg>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
+  <script>
+    var animation = bodymovin.loadAnimation({
+      container: document.querySelector('svg'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets9.lottiefiles.com/packages/lf20_8qyq4w.json'
+    });
+  </script>
+</body>
+</html>
